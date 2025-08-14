@@ -6,7 +6,7 @@ function Footer() {}
 
 function Home() {
   return (
-    <div id="HomePageLayout">
+    <div id="HomePageLayout" className="w-full h-full bg-neutral-800  ">
       <Header title={introTitle} text={introText} />
       <Body />
       <Footer />
