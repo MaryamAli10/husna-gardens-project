@@ -1,15 +1,11 @@
-import Header from "@/components/Header";
-
-function Body() {}
-
-function Footer() {}
+import Header from "@/components/layout/Header";
+import RecentAudioSection from "@/components/section/RecentAudioSection";
 
 function Home() {
   return (
-    <div id="HomePageLayout" className="w-full h-full bg-neutral-800  ">
+    <div id="HomePageLayout" className="w-full h-full bg-neutral-800 ">
       <Header title={introTitle} text={introText} />
-      <Body />
-      <Footer />
+      <RecentAudioSection />
     </div>
   );
 }
