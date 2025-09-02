@@ -32,6 +32,8 @@ function formatTime(seconds) {
   return `${formattedHours}${formattedMinutes}${formattedSeconds}`;
 }
 
+function hnadleDownload() {}
+
 function PlayBtn({ onClick }) {
   return (
     <button onClick={onClick}>
@@ -59,6 +61,28 @@ function AudioCard({ title, audioSrc }) {
     const seekTime = Math.floor(e.target.value);
     audioRef.current.currentTime = seekTime;
     setCurrentTime(seekTime);
+  }
+
+  function handleFastForward() {
+    if (currentTime + 10 >= duration) {
+      setCurrentTime(duration);
+      audioRef.current.currentTime = duration;
+    } else {
+      let newCurrentTime = currentTime + 10;
+      setCurrentTime(newCurrentTime);
+      audioRef.current.currentTime = newCurrentTime;
+    }
+  }
+
+  function handleRewind() {
+    if (currentTime <= 5) {
+      setCurrentTime(0);
+      audioRef.current.currentTime = 0;
+    } else {
+      let newCurrentTime = currentTime - 5;
+      setCurrentTime(newCurrentTime);
+      audioRef.current.currentTime = newCurrentTime;
+    }
   }
 
   function playAudio() {
@@ -141,7 +165,12 @@ function AudioCard({ title, audioSrc }) {
         >
           <div id="AudioPlayerControls" className="flex gap-4 ">
             <button>
-              <Rewind strokeWidth={0} size={20} fill="#262626" />
+              <Rewind
+                strokeWidth={0}
+                size={20}
+                fill="#262626"
+                onClick={handleRewind}
+              />
             </button>
             {isPlaying ? (
               <PauseBtn onClick={pauseAudio} />
@@ -149,7 +178,12 @@ function AudioCard({ title, audioSrc }) {
               <PlayBtn onClick={playAudio} />
             )}
             <button>
-              <FastForward strokeWidth={0} size={20} fill="#262626" />
+              <FastForward
+                strokeWidth={0}
+                size={20}
+                fill="#262626"
+                onClick={handleFastForward}
+              />
             </button>
           </div>
           <button className="justify-self-end">

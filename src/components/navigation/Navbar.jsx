@@ -1,4 +1,4 @@
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 function Navbar() {
@@ -7,11 +7,17 @@ function Navbar() {
   const sideBar = (
     <div
       id="sideBar"
-      className="absolute bg-neutral-800 text-neutral-50 w-2/3 min-h-screen overflow-y-auto transition-transform transform ease-in-out duration-300 translate-x-0"
+      className="flex absolute fixed bg-neutral-800 text-neutral-50 w-3/4 min-h-screen overflow-y-auto transition-transform transform ease-in-out duration-300 translate-x-0 "
     >
-      <div className="p-4">
-        <ul>
-          <li className="mb-2">
+      <div className="flex flex-col items-center p-4 w-full items-end">
+        <button
+          className="flex justify-self-end items-end "
+          onClick={() => setIsOpen(false)}
+        >
+          <X color="#fafafa" size={38} />
+        </button>
+        <ul className="flex flex-col divide-y divide-neutral-700 w-full text-lg">
+          <li className="mb-2 w-full border-b">
             <a className="block hover:violet-600" href="#">
               Home
             </a>
@@ -44,7 +50,7 @@ function Navbar() {
   return (
     <>
       {isOpen && sideBar}
-      <div className="relative sticky top-0 z-50 w-full bg-neutral-900 ">
+      <div className="static fixed top-0 z-50 w-full bg-neutral-900 ">
         <div
           className="container mx-auto justify-end
        flex items-center justify-between p-4"
