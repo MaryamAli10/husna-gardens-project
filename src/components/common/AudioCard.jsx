@@ -32,8 +32,6 @@ function formatTime(seconds) {
   return `${formattedHours}${formattedMinutes}${formattedSeconds}`;
 }
 
-function hnadleDownload() {}
-
 function PlayBtn({ onClick }) {
   return (
     <button onClick={onClick}>
@@ -187,7 +185,9 @@ function AudioCard({ title, audioSrc }) {
             </button>
           </div>
           <button className="justify-self-end">
-            <Download strokeWidth={3} size={20} className="neutral-800" />
+            <a href={audioSrc} target="_blank" download>
+              <Download strokeWidth={3} size={20} className="neutral-800" />
+            </a>
           </button>
         </div>
       </CardContent>

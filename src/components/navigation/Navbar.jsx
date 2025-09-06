@@ -1,13 +1,18 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
-function Navbar() {
+function Navbar({ setPage }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  function handleClick(page) {
+    setPage(page);
+    setIsOpen(false);
+  }
 
   const sideBar = (
     <div
       id="sideBar"
-      className="flex absolute fixed bg-neutral-800 text-neutral-50 w-3/4 min-h-screen overflow-y-auto transition-transform transform ease-in-out duration-300 translate-x-0 "
+      className="flex absolute z-50 fixed bg-neutral-800 text-neutral-50 w-3/4 min-h-screen overflow-y-auto transition-transform transform ease-in-out duration-300 translate-x-0 "
     >
       <div className="flex flex-col items-center p-4 w-full items-end">
         <button
@@ -16,31 +21,28 @@ function Navbar() {
         >
           <X color="#fafafa" size={38} />
         </button>
-        <ul className="flex flex-col divide-y divide-neutral-700 w-full text-lg">
-          <li className="mb-2 w-full border-b">
-            <a className="block hover:violet-600" href="#">
-              Home
-            </a>
+        <ul className="flex flex-col divide-y divide-neutral-700 w-full text-2xl w-full font-[Eb-Garmond] ">
+          <li className="mb-2 ">
+            <button onClick={() => handleClick("home")}>Home</button>
           </li>
           <li className="mb-2">
-            <a className="block hover:violet-600" href="#">
-              Tafsir
-            </a>
+            <button onClick={() => handleClick("tafsir")}>Tafsir</button>
           </li>
           <li className="mb-2">
-            <a className="block hover:violet-600" href="#">
+            <button onClick={() => handleClick("riyadUsSaliheen")}>
               Riyad-Us-Saliheen
-            </a>
+            </button>
           </li>
           <li className="mb-2">
-            <a className="block hover:violet-600" href="#">
+            <button onClick={() => handleClick("kitabAtTawhid")}>
               Kitab-At-Tawhid
-            </a>
+            </button>
           </li>
           <li className="mb-2">
-            <a className="block hover:violet-600" href="#">
-              Contact
-            </a>
+            <button onClick={() => handleClick("khutbah")}>Khutbah</button>
+          </li>
+          <li className="mb-2">
+            <button onClick={() => handleClick("contact")}>Contact</button>
           </li>
         </ul>
       </div>
@@ -50,7 +52,7 @@ function Navbar() {
   return (
     <>
       {isOpen && sideBar}
-      <div className="static fixed top-0 z-50 w-full bg-neutral-900 ">
+      <div className="sticky top-0  w-full bg-neutral-900 border-b border-neutral-800 ">
         <div
           className="container mx-auto justify-end
        flex items-center justify-between p-4"
