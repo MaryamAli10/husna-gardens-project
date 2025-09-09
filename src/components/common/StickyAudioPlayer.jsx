@@ -7,10 +7,12 @@ import {
   SkipForward,
 } from "lucide-react";
 
+import { useState } from "react";
+
 function StickyAudioPlayer() {
   return (
-    <div>
-      <Banner>Contact</Banner>
+    <div className="bg-neutral-900 ">
+      <div className="flex flex-row"></div>
     </div>
   );
 }
