@@ -6,10 +6,17 @@ function Contact() {
     <div>
       <Banner>Contact</Banner>
       <div className="w-full h-full p-4 bg-neutral-800 text-white">
-        <div className="">
-          <MessageCircle />
-          <Mail />
-          <MapPinHouse />
+        <div className="" flex flex-col>
+          <span>
+            <MessageCircle className="inline" /> 1 (868) 123-4567
+          </span>
+          <span>
+            <Mail className="inline" /> info@example.com
+          </span>
+          <span>
+            <MapPinHouse className="inline" /> 123 Main St, Anytown, Trinidad &
+            Tabago
+          </span>
         </div>
 
         <div>
