@@ -1,5 +1,4 @@
 import AudioCard from "@/components/common/AudioCard";
-import { useState } from "react";
 
 function RecentAudioSection() {
   function handleLoadMore() {
@@ -7,10 +6,10 @@ function RecentAudioSection() {
   }
 
   const audioCardList = [
-    <AudioCard title={titles[0]} audioSrc={audio} key="1" />,
-    <AudioCard title={titles[1]} key="2" />,
-    <AudioCard title={titles[2]} key="3" />,
-    <AudioCard title={titles[3]} key="4" />,
+    <AudioCard title={titles[0]} audioSrc={audio} />,
+    <AudioCard title={titles[1]} />,
+    <AudioCard title={titles[2]} />,
+    <AudioCard title={titles[3]} />,
   ];
 
   return (
