@@ -7,10 +7,10 @@ function RecentAudioSection() {
   }
 
   const audioCardList = [
-    <AudioCard title={titles[0]} audioSrc={audio} id="1" />,
-    <AudioCard title={titles[1]} id="2" />,
-    <AudioCard title={titles[2]} id="3" />,
-    <AudioCard title={titles[3]} id="4" />,
+    <AudioCard title={titles[0]} audioSrc={audio} key="1" />,
+    <AudioCard title={titles[1]} key="2" />,
+    <AudioCard title={titles[2]} key="3" />,
+    <AudioCard title={titles[3]} key="4" />,
   ];
 
   return (
