@@ -3,27 +3,42 @@ import { MessageCircle, Mail, MapPinHouse } from "lucide-react";
 
 function Contact() {
   return (
-    <div>
+    <div className="bg-neutral-800 min-h-screen">
       <Banner>Contact</Banner>
-      <div className="w-full h-full p-4 bg-neutral-800 text-white">
-        <div className="" flex flex-col>
+      <div className="text-neutral-50 p-6 divide-y divide-neutral-700">
+        <div className="p-8 flex flex-col gap-4 ">
           <span>
-            <MessageCircle className="inline" /> 1 (868) 123-4567
+            <h2>
+              <MessageCircle className="inline" /> Phone
+            </h2>
+            <p className="text-neutral-400">1 (868) 123-4567</p>
           </span>
+
           <span>
-            <Mail className="inline" /> info@example.com
+            <h2>
+              <Mail className="inline" /> Email
+            </h2>
+            <p className="text-neutral-400">info@example.com</p>
           </span>
+
           <span>
-            <MapPinHouse className="inline" /> 123 Main St, Anytown, Trinidad &
-            Tabago
+            <h2>
+              <MapPinHouse className="inline" /> Location
+            </h2>
+            <p className="text-neutral-400">
+              123 Main St, Anytown, Trinidad & Tobago
+            </p>
           </span>
         </div>
 
-        <div>
+        <div className="p-8 flex flex-col gap-4">
           <h2 className="font-[Gb-Garmoned] font-medium text-2xl">
             Books covered in Class:
           </h2>
-          <ul className="font-[Open_Sans]" style={{ listStyleType: "disc" }}>
+          <ul
+            className="font-[Open_Sans] gap-1 flex flex-col"
+            style={{ listStyleType: "disc" }}
+          >
             <li>
               <a className="underline hover:text-purple-600" href="" download>
                 Riyad-Us-Saliheen

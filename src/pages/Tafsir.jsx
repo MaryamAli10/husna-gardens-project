@@ -77,7 +77,7 @@ function Placeholder({ items }) {
 
 function Tafsir() {
   return (
-    <div className="bg-neutral-800 text-neutral-50">
+    <div className="bg-neutral-800 text-neutral-50 min-h-screen">
       <Banner>Tafsir</Banner>
       <div className="flex flex-col font-[EB-Garmond] ">
         <h2 className="flex w-fit text-3xl border-b border-neutral-50 self-center my-4">

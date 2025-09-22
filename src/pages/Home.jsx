@@ -3,7 +3,10 @@ import RecentAudioSection from "@/components/section/RecentAudioSection";
 
 function Home() {
   return (
-    <div id="HomePageLayout" className="w-full h-full bg-neutral-800 ">
+    <div
+      id="HomePageLayout"
+      className="w-full h-full bg-neutral-800 min-h-screen"
+    >
       <Header title={introTitle} text={introText} />
       <RecentAudioSection />
     </div>
