@@ -155,7 +155,7 @@ function AudioCard({ title, audioSrc }) {
               handleSeek(e);
             }}
           />
-          <span>{formatTime(duration)}</span>
+          <span>{formatTime(duration - currentTime)}</span>
         </div>
         <div
           id="btnGroup"
