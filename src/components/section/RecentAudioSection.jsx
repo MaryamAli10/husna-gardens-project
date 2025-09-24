@@ -1,12 +1,13 @@
 import AudioCard from "@/components/common/AudioCard";
-import { useState } from "react";
 
 function RecentAudioSection() {
   function handleLoadMore() {
     //to be added
   }
 
-  const audioCardList = [];
+  const audioCardList = titles.map((title, index) => (
+    <AudioCard key={index} title={title} audioSrc={audio} />
+  ));
 
   return (
     <div className="bg-neutral-800 text-neutral-50 w-full pb-8 px-6 lg:px-30 2xl:px-60">
@@ -14,10 +15,7 @@ function RecentAudioSection() {
         Latest Classes
       </h1>
       <div className="flex flex-col gap-4 " id="latest-classes">
-        <AudioCard title={titles[0]} audioSrc={audio} />
-        <AudioCard title={titles[1]} />
-        <AudioCard title={titles[2]} />
-        <AudioCard title={titles[3]} />
+        {audioCardList}
         <button
           className="bg-neutral-700 text-neutral-50 rounded w-auto px-4 py-2 mx-auto hover:bg-neutral-600 transition"
           onClick={handleLoadMore}

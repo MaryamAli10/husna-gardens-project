@@ -12,7 +12,6 @@ const __dirname = path.dirname(__filename);
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/husna-gardens-project/",
 
   resolve: {
     alias: {
