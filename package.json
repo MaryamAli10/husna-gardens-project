@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://maryamali10.github.io/",
   "scripts": {
     "dev": "vite --port 5000",
     "build": "vite build && cp dist/index.html dist/404.html",
