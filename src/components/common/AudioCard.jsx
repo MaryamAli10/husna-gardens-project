@@ -101,7 +101,6 @@ function AudioCard({ title, audioSrc }) {
     };
     const durationUpdate = () => {
       setDuration(Math.floor(audio.duration));
-      console.log(audio.duration);
     };
     audio.addEventListener("timeupdate", timeUpdate);
     audio.addEventListener("loadedmetadata", durationUpdate);
